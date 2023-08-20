@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "author": "白衣画甲",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 6.66, "left": -199.99, "attrs": {} },
+    {
+      "type": "board-ssd1306",
+      "id": "oled1",
+      "top": 118.13,
+      "left": 1.51,
+      "attrs": { "i2cAddress": "0x3c" }
+    },
+    {
+      "type": "wokwi-ssd1306",
+      "id": "ssd1306",
+      "top": -138.01,
+      "left": -37.33,
+      "attrs": { "i2c-address": "0x3D" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "oled1:GND", "esp:GND.1", "black", [ "v-20.19", "h-58.18", "v6" ] ],
+    [ "oled1:VCC", "esp:VIN", "red", [ "v-120.19", "h-262.97", "v157.33" ] ],
+    [ "oled1:SCL", "esp:D22", "green", [ "v0" ] ],
+    [ "oled1:SDA", "esp:D21", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
