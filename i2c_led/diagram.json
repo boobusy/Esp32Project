@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "author": "白衣画甲",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 44.67, "left": -210.66, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 56.4,
+      "left": -40.92,
+      "attrs": { "pins": "i2c" }
+    },
+    { "type": "wokwi-lcd1602", "id": "lcd2", "top": -180.97, "left": -28.8, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "lcd1:GND", "esp:GND.1", "black", [ "h-29.57", "v2.01" ] ],
+    [
+      "esp:VIN",
+      "lcd1:VCC",
+      "red",
+      [ "h-17.51", "v50.56", "h126.67", "v-54.67", "h46.67", "v-113.33" ]
+    ],
+    [ "lcd1:SDA", "esp:D21", "green", [ "h-51.57", "v8.34" ] ],
+    [ "lcd1:SCL", "esp:D22", "green", [ "h-53.58", "v-2.5" ] ]
+  ],
+  "dependencies": {}
+}
