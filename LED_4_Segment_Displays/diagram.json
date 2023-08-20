@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "author": "白衣画甲",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": 16.2, "left": 79.6, "attrs": {} },
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -36.67, "left": -142.67, "attrs": {} },
+    {
+      "type": "wokwi-7segment",
+      "id": "sevseg1",
+      "top": 82.62,
+      "left": 145.12,
+      "attrs": { "digits": "4" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 29.65,
+      "left": -6.85,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 14.81,
+      "left": 36.6,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 42.35,
+      "left": 38.4,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r4",
+      "top": 48.53,
+      "left": -26.69,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "esp:D5", "r4:1", "green", [ "h0" ] ],
+    [ "r4:2", "bb1:12t.a", "green", [ "h25.32", "v0.17", "h153.77" ] ],
+    [ "sevseg1:A", "bb1:13t.c", "", [ "$bb" ] ],
+    [ "sevseg1:B", "bb1:17t.c", "", [ "$bb" ] ],
+    [ "sevseg1:C", "bb1:15b.h", "", [ "$bb" ] ],
+    [ "sevseg1:D", "bb1:13b.h", "", [ "$bb" ] ],
+    [ "sevseg1:E", "bb1:12b.h", "", [ "$bb" ] ],
+    [ "sevseg1:F", "bb1:14t.c", "", [ "$bb" ] ],
+    [ "sevseg1:G", "bb1:16b.h", "", [ "$bb" ] ],
+    [ "sevseg1:DP", "bb1:14b.h", "", [ "$bb" ] ],
+    [ "sevseg1:DIG1", "bb1:12t.c", "", [ "$bb" ] ],
+    [ "sevseg1:DIG2", "bb1:15t.c", "", [ "$bb" ] ],
+    [ "sevseg1:DIG3", "bb1:16t.c", "", [ "$bb" ] ],
+    [ "sevseg1:DIG4", "bb1:17b.h", "", [ "$bb" ] ],
+    [ "sevseg1:COM", "bb1:18b.h", "", [ "$bb" ] ],
+    [ "sevseg1:CLN", "bb1:18t.c", "", [ "$bb" ] ],
+    [ "esp:D18", "r3:1", "green", [ "h20.38", "v0.42", "h49.66", "v2.55" ] ],
+    [ "esp:D19", "r1:1", "green", [ "v-0.49", "h31.11", "v-11" ] ],
+    [ "esp:D21", "r2:1", "green", [ "h41.61", "v-7.06" ] ],
+    [ "r2:2", "bb1:17b.j", "green", [ "v0.32", "h315.69", "v216.15", "h-152.86" ] ],
+    [ "r1:2", "bb1:16t.a", "green", [ "v-0.58", "h223.98" ] ],
+    [ "r3:2", "bb1:15t.a", "green", [ "v-0.41", "h135.28" ] ],
+    [ "esp:D32", "bb1:13t.a", "green", [ "h-15.93", "v-83.53", "h374.4" ] ],
+    [ "esp:D33", "bb1:14t.a", "green", [ "h-35.13", "v-112.23", "h19.2" ] ],
+    [ "esp:D25", "bb1:17t.a", "green", [ "h-44.73", "v-141.03", "h9.6" ] ],
+    [ "esp:D13", "bb1:12b.j", "green", [ "h-15.93", "v89.17", "h9.6" ] ],
+    [ "esp:D12", "bb1:13b.j", "green", [ "h-25.53", "v107.87", "h19.2" ] ], 
+    [ "esp:D14", "bb1:14b.j", "green", [ "h-44.73", "v127.87", "h19.2" ] ],
+    [ "esp:D27", "bb1:15b.j", "green", [ "h-54.33", "v146.67", "h432" ] ],
+    [ "esp:D26", "bb1:16b.j", "green", [ "h-63.93", "v185.27", "h9.6" ] ]
+  ],
+  "dependencies": {}
+}
