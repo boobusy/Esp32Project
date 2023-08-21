@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "author": "白衣画甲",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -70.3, "left": 140.01, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -42.39,
+      "left": -143.53,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 73.37,
+      "left": -0.26,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -43.07,
+      "left": -115.54,
+      "attrs": { "color": "red", "flip": "" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -43.06,
+      "left": -88.2,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led4",
+      "top": -42.4,
+      "left": -60.87,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led5",
+      "top": -42.5,
+      "left": -34.6,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "board-ili9341-cap-touch",
+      "id": "lcd1",
+      "top": 125.12,
+      "left": -144.51,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "led1:C", "r1:1", "green", [ "v0" ] ],
+    [ "led2:C", "r1:1", "green", [ "v0" ] ],
+    [ "led3:C", "r1:1", "green", [ "v0" ] ],
+    [ "led4:C", "r1:1", "green", [ "v0" ] ],
+    [ "led5:C", "r1:1", "green", [ "v0" ] ],
+    [ "r1:2", "esp:GND.2", "green", [ "v0" ] ],
+    [ "led1:A", "esp:D13", "orange", [ "v0" ] ],
+    [ "led2:A", "esp:D12", "orange", [ "v0" ] ],
+    [ "led3:A", "esp:D14", "orange", [ "v0" ] ],
+    [ "led4:A", "esp:D27", "orange", [ "v0" ] ],
+    [ "led5:A", "esp:D26", "orange", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
