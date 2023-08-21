@@ -1,12 +1,21 @@
 #include <Arduino.h>
 #include "oneled.hpp"
 
+
+int ledPinList[] = {12, 13, 14, 26, 27};
+
 void setup()
 {
 
+    // 设置引脚为输出模式
+    for (size_t i = 0; i < 5; i++)
+    {
+      pinMode(ledPinList[i], OUTPUT);
+    }
+  
+
   // 给D13引脚放电就点亮led.
   OnLED(13);
-
 }
 
 void loop()
@@ -16,9 +25,11 @@ void loop()
   //  delay(1000);
 
   // 点亮一串LED
-  int ledPinList[] = {12, 13, 14, 26, 27};
   OnLEDList(ledPinList);
-  delay(100);
+  delay(2000);
   // 关闭led
-  OffLEDList(ledPinList);
+  // OffLEDList(ledPinList);
+
+  digitalWrite(12, LOW);
+  printf("hello wor2323d 333 \n");
 }

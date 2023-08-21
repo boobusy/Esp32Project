@@ -13,9 +13,6 @@ void OnLED(int n)
 {
 
     int led_pin = n;
-
-    // 设置引脚为输出模式
-    pinMode(led_pin, OUTPUT);
     // 设置 引脚高电平, 就点亮了.
     digitalWrite(led_pin, HIGH);
 }

@@ -45,13 +45,6 @@
       "top": -42.5,
       "left": -34.6,
       "attrs": { "color": "red" }
-    },
-    {
-      "type": "board-ili9341-cap-touch",
-      "id": "lcd1",
-      "top": 125.12,
-      "left": -144.51,
-      "attrs": {}
     }
   ],
   "connections": [
